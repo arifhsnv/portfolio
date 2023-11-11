@@ -26,18 +26,32 @@ const linkForInformation = document.querySelector(".link-information");
 const buttonDarkMode = document.querySelector(".dark-mode");
 const iconSunFromMoon = document.querySelector(".fa-regular");
 const line = document.querySelector(".line");
+const downloadCvButton=document.querySelector(".download-cv")
+const preloader = document.querySelector(".preloader");
+const hamburgerIconButton = document.querySelector(".hamburger-icon")
+const listOfNavbar = document.querySelector(".center-nav")
+const logoOfNavbar = document.querySelector(".right-nav")
+const listOfMenu=document.querySelector(".list")
 
 
-const preloader = document.querySelector(".preloader")
 
-window.addEventListener("load", () => {
-    preloader.style.display="none"
+
+
+
+hamburgerIconButton.addEventListener("click", () => {
+  listOfNavbar.classList.toggle("active")
+  logoOfNavbar.classList.toggle("active")
+  hamburgerIconButton.classList.toggle("active")
+  listOfMenu.classList.toggle("active")
 })
 
 
 
 
 
+window.addEventListener("load", () => {
+  preloader.style.display = "none";
+});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -52,8 +66,6 @@ const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => {
   observer.observe(el);
 });
-
-
 
 buttonDarkMode.addEventListener("click", (e) => {
   e.preventDefault();
@@ -83,7 +95,10 @@ buttonDarkMode.addEventListener("click", (e) => {
   linkForInformation.classList.toggle("toggle-dark");
   line.classList.toggle("toggle-dark");
   iconSunFromMoon.classList.toggle("fa-moon");
-    buttonDarkMode.classList.toggle("toggle-dark");
-    preloader.classList.toggle("toggle-dark")
+  buttonDarkMode.classList.toggle("toggle-dark");
+  preloader.classList.toggle("toggle-dark");
+  downloadCvButton.classList.toggle("toggle-dark")
+  listOfNavbar.classList.toggle("toggle-dark")
+  logoOfNavbar.classList.toggle("toggle-dark")
+  listOfMenu.classList.toggle("toggle-dark")
 });
-
